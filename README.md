@@ -1,0 +1,2 @@
+# TrainingDotNet
+Projects .net
