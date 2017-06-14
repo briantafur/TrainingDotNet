@@ -9,21 +9,21 @@ namespace Parking
     class Vehicle
     {
 
-        private String plate;
-        private int hourIn;
-        private int hourOut;
+        private String plaque;
+        private String hourIn;
+        private String hourOut;
         private String state;
 
-        public Vehicle(string plate, int hourIn)
+        public Vehicle(string plate, String hourIn)
         {
-            this.plate = plate;
+            this.plaque = plate;
             this.hourIn = hourIn;
             this.state = "Inside the parking lot";
         }
 
-        public string Plate { get => plate; set => plate = value; }
-        public int HourIn { get => hourIn; set => hourIn = value; }
-        public int HourOut { get => hourOut; set => hourOut = value; }
+        public string Plate { get => plaque; set => plaque = value; }
+        public String HourIn { get => hourIn; set => hourIn = value; }
+        public String HourOut { get => hourOut; set => hourOut = value; }
         public string State { get => state; set => state = value; }
     }
 }

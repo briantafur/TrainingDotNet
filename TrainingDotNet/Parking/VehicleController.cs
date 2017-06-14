@@ -46,7 +46,6 @@ namespace Parking
             Vehicle temp = search(veh.Plate);
             if (temp != null)
             {
-                temp.HourIn = veh.HourIn;
                 temp.HourOut = veh.HourOut;
                 temp.State = veh.State;
                 return true;
@@ -57,6 +56,35 @@ namespace Parking
             }
         }
 
+        public bool editIngres(Vehicle veh)
+        {
+            Vehicle temp = search(veh.Plate);
+            if (temp != null)
+            {
+                if (temp.State.Equals("Out"))
+                {
+                    temp.HourIn = veh.HourIn;
+                    temp.State = veh.State;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public int calculateHours(Vehicle veh)
+        {
+            DateTime hourIn = Convert.ToDateTime(veh.HourIn);
+            DateTime hourOut = Convert.ToDateTime(veh.HourOut);
+            int total = Convert.ToInt32(Math.Ceiling((hourOut - hourIn).TotalHours));
+            return total;
+        }
         public bool remove(Vehicle veh)
         {
             vehicles.Remove(veh);
