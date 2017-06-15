@@ -45,6 +45,7 @@ namespace Parking
                     }
                 }
             }
+            fillTable();
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
@@ -63,8 +64,10 @@ namespace Parking
                     {
                         tbTimeIn.Text = aux.HourIn;
                         tbTimeOut.Text = aux.HourOut;
-                        tbTotalHours.Text = control.calculateHours(aux) + "";
+                        tbTotalHours.Text = Convert.ToString(control.calculateHours(aux));
+                        tbTotal.Text = Convert.ToString(control.calculateTotal(aux));
                         MessageBox.Show("See you next time, thanks for coming");
+                        fillTable();
                     }
                     else
                     {
@@ -72,6 +75,21 @@ namespace Parking
                     }
                 }
             }
+        }
+
+        private void fillTable()
+        {
+            dataGridVehicles.RowCount = 1;
+            LinkedList<Vehicle> vehicles = control.Vehicles;
+            dataGridVehicles.ColumnCount = 0;
+            dataGridVehicles.Columns.Add("colPlaque", "Plaque");
+            dataGridVehicles.Columns.Add("colState", "State");
+            dataGridVehicles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            foreach (Vehicle item in vehicles)
+            {
+                dataGridVehicles.Rows.Add(new Object[] { item.Plate, item.State });
+            }
+
         }
     }
 }

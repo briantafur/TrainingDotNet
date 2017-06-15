@@ -8,8 +8,10 @@ namespace Parking
 {
     class VehicleController
     {
-
+        public static double VALOR_HORA = 2500;
         LinkedList<Vehicle> vehicles = new LinkedList<Vehicle>();
+
+        internal LinkedList<Vehicle> Vehicles { get => vehicles; set => vehicles = value; }
 
         public VehicleController()
         {
@@ -78,6 +80,14 @@ namespace Parking
             }
         }
 
+
+        public double calculateTotal(Vehicle veh)
+        {
+            return calculateHours(veh) * VALOR_HORA;
+        }
+
+
+
         public int calculateHours(Vehicle veh)
         {
             DateTime hourIn = Convert.ToDateTime(veh.HourIn);
@@ -85,6 +95,7 @@ namespace Parking
             int total = Convert.ToInt32(Math.Ceiling((hourOut - hourIn).TotalHours));
             return total;
         }
+
         public bool remove(Vehicle veh)
         {
             vehicles.Remove(veh);
