@@ -62,7 +62,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(275, 223);
+            this.tabControl1.Size = new System.Drawing.Size(237, 223);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -120,7 +120,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(267, 197);
+            this.tabPage2.Size = new System.Drawing.Size(229, 197);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(267, 197);
+            this.tabPage3.Size = new System.Drawing.Size(229, 197);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -229,16 +229,16 @@
             // dataGridVehicles
             // 
             this.dataGridVehicles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridVehicles.Location = new System.Drawing.Point(7, 7);
+            this.dataGridVehicles.Location = new System.Drawing.Point(3, 3);
             this.dataGridVehicles.Name = "dataGridVehicles";
-            this.dataGridVehicles.Size = new System.Drawing.Size(254, 184);
+            this.dataGridVehicles.Size = new System.Drawing.Size(220, 78);
             this.dataGridVehicles.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 242);
+            this.ClientSize = new System.Drawing.Size(259, 242);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";

@@ -19,7 +19,6 @@ namespace Parking
         {
             InitializeComponent();
             control = new VehicleController();
-            String time = DateTime.Now.ToString("hh:mm");
         }
 
         private void btnCheckIn_Click(object sender, EventArgs e)
@@ -79,17 +78,23 @@ namespace Parking
 
         private void fillTable()
         {
-            dataGridVehicles.RowCount = 1;
+            dataGridVehicles.Rows.Clear();
             LinkedList<Vehicle> vehicles = control.Vehicles;
-            dataGridVehicles.ColumnCount = 0;
+            dataGridVehicles.Columns.Clear();
             dataGridVehicles.Columns.Add("colPlaque", "Plaque");
             dataGridVehicles.Columns.Add("colState", "State");
             dataGridVehicles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridVehicles.GridColor = Color.Green;
+            dataGridVehicles.ForeColor = Color.Green;
+            //dataGridVehicles.BackgroundColor = Color.Red;
+            dataGridVehicles.RowHeadersVisible = false;
+            dataGridVehicles.ReadOnly = true;
+            //dataGridVehicles.DefaultCellStyle.BackColor = Color.Purple;
+            dataGridVehicles.AllowUserToAddRows = false;
             foreach (Vehicle item in vehicles)
             {
                 dataGridVehicles.Rows.Add(new Object[] { item.Plate, item.State });
             }
-
         }
     }
 }
