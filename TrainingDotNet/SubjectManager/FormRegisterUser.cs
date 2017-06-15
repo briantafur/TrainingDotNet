@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SubjectManager
 {
-    public partial class Form1 : Form
+    public partial class FormRegisterUser : Form
     {
-        public Form1()
+        public FormRegisterUser()
         {
             InitializeComponent();
         }
