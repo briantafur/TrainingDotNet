@@ -22,6 +22,17 @@ namespace SubjectManager
             subjects = new LinkedList<Subject>();
         }
 
+        public void updatePercents(LinkedList<double> list)
+        {
+            foreach (Subject item in subjects)
+            {
+                for (int i = 0; i < item.Grades.Count; i++)
+                {
+                    item.Grades.ElementAt(i).Porcent = list.ElementAt(i);
+                }
+            }
+        }
+
         public string Name { get => name; set => name = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }

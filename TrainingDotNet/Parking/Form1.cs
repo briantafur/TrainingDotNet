@@ -96,5 +96,10 @@ namespace Parking
                 dataGridVehicles.Rows.Add(new Object[] { item.Plate, item.State });
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

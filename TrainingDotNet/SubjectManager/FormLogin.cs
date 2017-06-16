@@ -15,7 +15,10 @@ namespace SubjectManager
     {
 
         public static UserController control = new UserController();
-
+        User user;
+        /// <summary>
+        /// 
+        /// </summary>
         public FormLogin()
         {
             InitializeComponent();
@@ -33,6 +36,36 @@ namespace SubjectManager
         private void openRegisterUserForm()
         {
             FormRegisterUser form = new FormRegisterUser();
+            form.ShowDialog();
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbUsername.Text) || String.IsNullOrEmpty(tbPassword.Text))
+            {
+                MessageBox.Show("Username and Password required");
+                return;
+            }
+            String username = tbUsername.Text;
+            String password = tbPassword.Text;
+            user = control.login(username, password);
+            if (user != null)
+            {
+                Thread thread = new System.Threading.Thread
+                (new System.Threading.ThreadStart(openListOfSubjects));
+                thread.SetApartmentState
+                    (System.Threading.ApartmentState.STA);
+                this.Close();
+                thread.Start();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+            }
+        }
+        private void openListOfSubjects()
+        {
+            FormListOfSubjects form = new FormListOfSubjects(user);
             form.ShowDialog();
         }
     }

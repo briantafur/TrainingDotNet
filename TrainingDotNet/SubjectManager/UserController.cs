@@ -42,6 +42,12 @@ namespace SubjectManager
             return null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="us"></param>
+        /// <param name="sub"></param>
+        /// <returns></returns>
         public bool addSubjectToUser(User us, Subject sub)
         {
             foreach (Subject item in us.Subjects)
@@ -53,6 +59,14 @@ namespace SubjectManager
             }
             us.Subjects.AddLast(sub);
             return true;
+        }
+
+        public void addGradeToSubject(Subject sub, LinkedList<Grade> grades)
+        {
+            foreach (Grade item in grades)
+            {
+                sub.Grades.AddLast(item);
+            }
         }
 
     }
